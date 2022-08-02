@@ -2,10 +2,25 @@
 
 <head>
     <title>dot_tripPlanner</title>
+    <script>
+        function validateForm() {
+        let fname = document.getElementsByTagfname["createNewAccount"]["fname"].value;
+        let sname = document.getElementsByTagsname["createNewAccount"]["sname"].value;
+        let email = document.getElementsByTagemail["createNewAccount"]["email"].value;
+        let password = document.getElementsByTagpassword["createNewAccount"]["password"].value;
+        let cpassword = document.getElementsByTagcpassword["createNewAccount"]["cpassword"].value;
+        let dob = document.getElementsByTagdob["createNewAccount"]["dob"].value;
+        let gender = document.getElementsByTaggender["createNewAccount"]["gender"].value;
+        if (fname == "" || sname == "" || email == "" || password == "" || cpassword == "" || dob == "" || gender == "") {
+        alert("Please fill-out your personal data!");
+        return false;
+  }
+}
+</script>
 </head>
 
 <body>
-    <form method="post" action="signUpData_sql.php">
+    <form name="createNewAccount" method="post" action="signUpData_sql.php" onsubmit="return validateForm()">
         <fieldset>
             <legend>Sign Up</legend>
             <p>It's quick and easy.</p>
@@ -25,6 +40,10 @@
                 <tr>
                     <td>New Password</td>
                     <td><input type="password" name="password" value=""></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="cpassword" value=""></td>
                 </tr>
                 <tr>
 						<td>Date of Birth</td>
